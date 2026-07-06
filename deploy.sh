@@ -11,10 +11,7 @@ echo "📁 Directorio: $REPO_DIR"
 echo "1. Descargando cambios de GitHub..."
 git pull origin master
 
-echo "2. Instalando dependencias..."
-npm install --no-fund --no-audit --ignore-scripts
-
-echo "2.1 Instalando @ceo-core/ar desde ceo-core-modules..."
+echo "2. Instalando @ceo-core/ar desde ceo-core-modules..."
 rm -rf /tmp/ceo-core-modules-build
 git clone -b main https://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@github.com/edgigarcia8908/ceo-core-modules.git /tmp/ceo-core-modules-build
 
@@ -24,8 +21,12 @@ npm run build
 npm pack
 cd "$REPO_DIR"
 
-npm install --ignore-scripts /tmp/ceo-core-modules-build/packages/ceo-ar/ceo-core-ar-*.tgz
+echo "2.1 Instalando el paquete AR en Birrapp..."
+npm install --no-fund --no-audit --ignore-scripts /tmp/ceo-core-modules-build/packages/ceo-ar/ceo-core-ar-*.tgz
 rm -rf /tmp/ceo-core-modules-build
+
+echo "3. Instalando resto de dependencias..."
+npm install --no-fund --no-audit --ignore-scripts
 
 echo "3. Compilando Next.js..."
 npm run build
