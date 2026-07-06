@@ -4,14 +4,6 @@ const nextConfig = {
   experimental: {
     externalDir: true,
   },
-  // Turbopack config (Next.js 16+ default bundler)
-  turbopack: {
-    resolveAlias: {
-      fs: false,
-      path: false,
-      crypto: false,
-    },
-  },
 };
 
 export default nextConfig;
