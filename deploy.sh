@@ -16,7 +16,7 @@ npm install --no-fund --no-audit --ignore-scripts
 
 echo "2.1 Instalando @ceo-core/ar desde ceo-core-modules..."
 rm -rf /tmp/ceo-core-modules-build
-git clone -b main https://${GITHUB_TOKEN}@github.com/edgigarcia8908/ceo-core-modules.git /tmp/ceo-core-modules-build
+git clone -b main https://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@github.com/edgigarcia8908/ceo-core-modules.git /tmp/ceo-core-modules-build
 
 cd /tmp/ceo-core-modules-build/packages/ceo-ar
 npm install --no-fund --no-audit --ignore-scripts
